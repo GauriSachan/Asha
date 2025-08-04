@@ -6,32 +6,62 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f9ff;
+      background-color: #e8f4f8; /* Soft light blue background */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
       margin: 0;
-    }
-
-    h1 {
-      margin-bottom: 20px;
       color: #333;
     }
 
+    h1 {
+      font-size: 2.5rem;
+      color: #5c6bc0; /* Soft lavender-blue */
+      margin-bottom: 20px;
+    }
+
     iframe {
-      border: none;
       width: 90%;
       max-width: 420px;
       height: 600px;
+      border: none;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button style for extra interactivity */
+    .start-button {
+      background-color: #81c784; /* Soft green */
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .start-button:hover {
+      background-color: #66bb6a; /* Darker green on hover */
     }
   </style>
 </head>
 <body>
-  <h1>Talk to Asha 👵</h1>
-  <iframe src="https://platform.inya.ai/widget/cb48a83fcb8c446682899ee604943bfa"></iframe>
+  <h1>Welcome to Asha, Your AI Assistant 💻</h1>
+  
+  <!-- You can add a welcoming button to start -->
+  <button class="start-button" onclick="startChat()">Start Chat</button>
+
+  <iframe id="chatIframe" style="display:none;" src="https://platform.inya.ai/widget/cb48a83fcb8c446682899ee604943bfa"></iframe>
+  
+  <script>
+    // Function to start the chat when the button is clicked
+    function startChat() {
+      document.querySelector('.start-button').style.display = 'none';  // Hide the start button
+      document.getElementById('chatIframe').style.display = 'block';   // Show the chat iframe
+    }
+  </script>
 </body>
 </html>
